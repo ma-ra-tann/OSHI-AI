@@ -1,32 +1,68 @@
+body {
+  background: radial-gradient(ellipse at bottom, #0f0f2d, #0a0a23);
+  font-family: 'Outfit', sans-serif;
+  color: white;
+  margin: 0;
+  overflow: hidden;
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 10px;
-  font-family: sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .message-area {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   overflow-y: auto;
-  margin-bottom: 10px;
-  background: #f1f1f1;
   padding: 10px;
-  border-radius: 8px;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(174, 104, 255, 0.2);
 }
 
 .user {
-  text-align: right;
-  margin: 5px;
-  color: blue;
+  align-self: flex-end;
+  background: linear-gradient(135deg, #a87eff, #6ecbff);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-break: break-word;
+  text-align: left;
 }
 
 .bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  color: #dcdcff;
+  padding: 10px 14px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-break: break-word;
   text-align: left;
-  margin: 5px;
-  color: green;
 }
 
+/* 💫 アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 入力フォーム */
 .input-form {
   display: flex;
   gap: 10px;
@@ -36,23 +72,25 @@ input {
   flex: 1;
   padding: 12px 16px;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
   font-size: 16px;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
 button {
-  padding: 0 20px;
-  background: #007bff;
-  color: white;
-  font-size: 20px;
+  background: linear-gradient(135deg, #ae68ff, #6ecbff);
   border: none;
   border-radius: 20px;
+  padding: 10px 16px;
+  color: white;
+  font-size: 18px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ae68ff;
 }

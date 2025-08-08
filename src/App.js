@@ -12,7 +12,10 @@ function App() {
     setMessages((prev) => [
       ...prev,
       { from: "user", text: inputText },
-      { from: "bot", text: "これは定型文の返答です！" },
+      {
+        from: "bot",
+        text: `シンロンに投票してね🎶\n👉 [こちらをクリック](https://share.mnetplus.world/boys2planet/participants/6841494379ae5728aa69a608?hl=ja)`,
+      },
     ]);
     setInputText("");
   };
@@ -21,9 +24,18 @@ function App() {
     <div className="chat-container">
       <div className="message-area">
         {messages.map((m, i) => (
-          <div key={i} className={m.from}>
-            {m.text}
-          </div>
+          <div
+            key={i}
+            className={m.from}
+            dangerouslySetInnerHTML={{
+              __html: m.text
+                .replace(/\n/g, "<br>")
+                .replace(
+                  /\[([^\]]+)\]\(([^)]+)\)/g,
+                  '<a href="$2" target="_blank" style="color:#7fbdff;">$1</a>'
+                ),
+            }}
+          />
         ))}
       </div>
       <form onSubmit={handleSubmit} className="input-form">
@@ -39,4 +51,5 @@ function App() {
   );
 }
 
+// ✅ これが一番最後！
 export default App;
