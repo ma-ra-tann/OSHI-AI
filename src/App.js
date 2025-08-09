@@ -5,23 +5,43 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!inputText.trim()) return;
 
-    setMessages((prev) => [
-      ...prev,
-      { from: "user", text: inputText },
-      {
-        from: "bot",
-        text: `シンロンに投票してね🎶\n👉 [こちらをクリック](https://share.mnetplus.world/boys2planet/participants/6841494379ae5728aa69a608?hl=ja)`,
-      },
-    ]);
+    // 先に自分のメッセージを表示
+    setMessages(prev => [...prev, { from: "user", text: inputText }]);
+
+    try {
+      const res = await fetch(`http://localhost:4000/api/search?name=${encodeURIComponent(inputText)}`);
+      const data = await res.json();
+      const hit = data.hits?.[0];
+
+      setMessages(prev => [
+        ...prev,
+        hit
+          ? { from: "bot", text: `「${hit.name}」に投票してね🎶\n👉 [こちらをクリック](${hit.url})` }
+          : { from: "bot", text: `該当が見つからなかったよ…\n公式一覧から探してね👇\n👉 [BOYS PLANET 参加者一覧](https://share.mnetplus.world/boys2planet/participants?hl=ja)` }
+      ]);
+    } catch (err) {
+      setMessages(prev => [
+        ...prev,
+        { from: "bot", text: "検索でエラーが出たよ…あとで再試行してね🙏" }
+      ]);
+    }
+
     setInputText("");
   };
-
   return (
     <div className="chat-container">
+      <div className="profile-header">
+        <img 
+          src="https://thetv.jp/i/tl/100/0045/1000045911_r.jpg?w=646" 
+          alt="マツコ・デラックス" 
+          className="profile-image"
+        />
+        <h2>マツコ・デラックス</h2>
+      </div>
       <div className="message-area">
         {messages.map((m, i) => (
           <div

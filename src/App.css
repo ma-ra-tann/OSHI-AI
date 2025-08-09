@@ -14,6 +14,33 @@ body {
   box-sizing: border-box;
 }
 
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(174, 104, 255, 0.2);
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ae68ff;
+  box-shadow: 0 0 15px rgba(174, 104, 255, 0.3);
+  margin-bottom: 10px;
+}
+
+.profile-header h2 {
+  margin: 0;
+  color: #dcdcff;
+  font-size: 24px;
+  text-shadow: 0 0 10px rgba(174, 104, 255, 0.5);
+}
+
 .message-area {
   display: flex;
   flex-direction: column;
