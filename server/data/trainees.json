@@ -2,11 +2,25 @@
   {
     "name": "アンドリュー",
     "aka": ["ANDREW", "アンドルー"],
-    "url": "https://share.mnetplus.world/boys2planet/participants/6836c30108c3cc45013ac3ae?hl=ja"
+    "url": "https://share.mnetplus.world/boys2planet/participants/6836c30108c3cc45013ac3ae?hl=ja",
+    "image": "https://image.cdn.mnetplus.world/mnetplus/images/2025/05/30/9F8504811AD24A47834FB527A2343665/1EjQ1UDOyUjQBNDN0MzQwkzQGRDRDFkN0IzN5MTR1ED.jpg?w=200&h=200&t=face"
   },
   {
     "name": "サンヒョン",
     "aka": ["Sunghyun", "ソンヒョン"],
-    "url": "https://share.mnetplus.world/boys2planet/participants/683d33f7ff18bf5bf51996d6?hl=ja"
+    "url": "https://share.mnetplus.world/boys2planet/participants/683d33f7ff18bf5bf51996d6?hl=ja",
+    "image": "https://image.cdn.mnetplus.world/mnetplus/images/2025/06/02/B8A3F4D5E2C94A1F8F6E7D2A9B5C3E8F/2EjR2VDPzVkRABENOzTxkxGFD5DRDZkN0JzN6NTR2EE.jpg?w=200&h=200&t=face"
+  },
+  {
+    "name": "佐藤景瑚",
+    "aka": ["けいご", "Keigo", "KEIGO"],
+    "group": "JO1",
+    "speechStyle": {
+      "firstPerson": ["僕", "俺"],
+      "sentenceEndings": ["〜っす", "〜やん", "〜じゃないすか", "〜っすね", "〜すよ"],
+      "expressions": ["！！", "（笑）", "（スウッ）", "えー！", "まじ？", "やばっ"],
+      "tone": "high_tension",
+      "personality": "sweet_and_playful"
+    }
   }
 ]
